@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="TrafResource" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/TrafResource" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/TrafResource" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="CSrvrConnect.cpp" />
+		<Unit filename="CSrvrConnect.h" />
+		<Unit filename="CommonDiags.cpp" />
+		<Unit filename="CommonDiags.h" />
+		<Unit filename="CoreCommon.h" />
+		<Unit filename="Debug.cpp" />
+		<Unit filename="Debug.h" />
+		<Unit filename="GlobalInformation.cpp" />
+		<Unit filename="GlobalInformation.h" />
+		<Unit filename="InterfaceConnection.cpp" />
+		<Unit filename="InterfaceConnection.h" />
+		<Unit filename="SqlInterface.cpp" />
+		<Unit filename="SqlInterface.h" />
+		<Unit filename="SrvrCommon.cpp" />
+		<Unit filename="SrvrCommon.h" />
+		<Unit filename="SrvrOthers.cpp" />
+		<Unit filename="SrvrOthers.h" />
+		<Unit filename="TestInterface.cpp" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
