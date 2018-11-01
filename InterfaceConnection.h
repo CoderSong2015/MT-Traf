@@ -97,7 +97,8 @@ extern "C" {
 #undef org_apache_trafodion_jdbc_t2_SQLMXConnection_moduleTimestamp_
 #define org_apache_trafodion_jdbc_t2_SQLMXConnection_moduleTimestamp_ 1234567890LL
 
-long connect(std::string, std::string, std::string);
+long Connect(std::string, std::string, std::string);
+long ConnectionClose(std::string server, long dialogueId);
 
 
 #ifdef __cplusplus

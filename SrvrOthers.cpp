@@ -67,7 +67,7 @@ SMD_QUERY_TABLE tranQueryTable[] = {
 #endif
 
 //Start Soln no:10-091103-5969
-extern jboolean getSqlStmtType(unsigned char* sql);
+extern bool getSqlStmtType(unsigned char* sql);
 //End Soln no:10-091103-5969
 
 /*

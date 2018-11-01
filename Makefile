@@ -43,6 +43,7 @@ T2_OBJS  = $(OUTDIR)/CommonDiags.o \
        $(OUTDIR)/SrvrKds.o \
        $(OUTDIR)/SrvrFunctions.o \
        $(OUTDIR)/JdbcDriverGlobal.o \
+       $(OUTDIR)/SQLMXDriver.o \
        $(OUTDIR)/SrvrSmd.o \
        $(OUTDIR)/SQLMXCommonFunctions.o \
        $(OUTDIR)/GlobalInformation.o  
@@ -68,7 +69,8 @@ all: test
 test: $(OBJS)
 	$(CXX) -o $@ -L$(LIBEXPDIR) -lsbfs -lsbms -levlsq -lwin -ltdm_sqlcli  -larkcmp_dll -larkcmplib -lcommon -lsort -lexecutor -lcomexe -lcli $(OBJS)
 
-
+ide:
+	cp test ./bin/Debug
 
 clean:
 	$(RM) -rf $(OUTDIR)
