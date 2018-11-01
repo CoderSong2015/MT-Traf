@@ -40,14 +40,13 @@
 #include "JdbcDriverGlobal.h"
 //#include "org_apache_trafodion_jdbc_t2_SQLMXConnection.h"
 //#include "org_apache_trafodion_jdbc_t2_DataWrapper.h"
-#include "SQLMXCommonFunctions.h"
+#include "InterfaceCommonFunctions.h"
 #include "CoreCommon.h"
 #include "SrvrCommon.h"
 #include "SrvrOthers.h"
 #include "Debug.h"
 #include "GlobalInformation.h"
 //#include "org_apache_trafodion_jdbc_t2_T2Driver.h"  //spjrs
-
 
 	bool getSqlStmtType(unsigned char* sql)
 	{

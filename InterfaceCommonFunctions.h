@@ -33,6 +33,7 @@
 #define _SQLDT_NUM_BIG_U  155   /* BigNum unsigned NUMERIC datatype */
                                 /* NUMERIC(N) where N > 9           */
 #define _SQLDT_NUM_BIG_S  156   /* BigNum signed NUMERIC datatype   */
+namespace interface{
 struct WrapperInfoStruct
 {
 	JNIEnv *jenv;
@@ -171,3 +172,5 @@ bool getSqlStmtType(unsigned char* sql);
 extern long SQLMXStatement_EXECUTE_FAILED(void);
 extern long SQLMXStatement_SUCCESS_NO_INFO(void);
 #endif
+
+}

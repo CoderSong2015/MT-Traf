@@ -1,15 +1,16 @@
-#include "SQLMXDriver.h"
+#include "InterfaceDriver.h"
 #include "InterfaceConnection.h"
-
+#include "Connection.h"
 #include <iostream>
 
 using namespace std;
 int main(){
-    int rrc = DriverInitialize("utf-8",1,"OFF","");
-    long rc = Connect("hao", "db__root", "123456");
+    int rrc = interface::DriverInitialize("utf-8",1,"OFF","");
+    //long rc = interface::Connect("hao", "db__root", "123456");
+    Connection *cc = new Connection();
+    cc->Connect();
     cout << "con" << endl;
-    rc = ConnectionClose("hao", rc);
+    int rc = cc->ConnectionClose();
     cout << rc << endl;
-    while(1);
 
 }

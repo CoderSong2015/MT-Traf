@@ -4,7 +4,7 @@
 #include <sqlext.h>
 #include "JdbcDriverGlobal.h"
 #include "InterfaceConnection.h"
-#include "SQLMXCommonFunctions.h"
+#include "InterfaceCommonFunctions.h"
 #include "CoreCommon.h"
 #include "SrvrCommon.h"
 #include "SrvrOthers.h"
@@ -13,7 +13,9 @@
 #include "GlobalInformation.h"
 #include "sqlcli.h"
 #include <iostream>
-long Connect(string server, string uid, string pwd)
+
+
+long interface::Connect(string server, string uid, string pwd)
 {
 
     SRVR_CONNECT_HDL *jdbcConnect = NULL;
@@ -42,7 +44,7 @@ long Connect(string server, string uid, string pwd)
 
 }
 
-long ConnectionClose(string server, long dialogueId)
+long interface::ConnectionClose(string server, long dialogueId)
 {
 
     SRVR_CONNECT_HDL *jdbcConnect;
@@ -115,4 +117,5 @@ void setCatalog(string server, long dialogueId, string catalog)
 
     FUNCTION_RETURN_VOID((NULL));
 }
+
 

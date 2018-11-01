@@ -41,11 +41,12 @@ T2_OBJS  = $(OUTDIR)/CommonDiags.o \
        $(OUTDIR)/SrvrOthers.o \
        $(OUTDIR)/TestInterface.o \
        $(OUTDIR)/SrvrKds.o \
+       $(OUTDIR)/Connection.o \
        $(OUTDIR)/SrvrFunctions.o \
        $(OUTDIR)/JdbcDriverGlobal.o \
-       $(OUTDIR)/SQLMXDriver.o \
+       $(OUTDIR)/InterfaceDriver.o \
        $(OUTDIR)/SrvrSmd.o \
-       $(OUTDIR)/SQLMXCommonFunctions.o \
+       $(OUTDIR)/InterfaceCommonFunctions.o \
        $(OUTDIR)/GlobalInformation.o  
 OBJS = $(COMMON_OBJS) $(T2_OBJS)
 MXODIR = $(TRAF_HOME)/../conn/odbc/src/odbc

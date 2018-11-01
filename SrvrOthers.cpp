@@ -42,7 +42,7 @@
 #include "SqlInterface.h"
 #include "CommonDiags.h"
 #include "Debug.h"
-#include "SQLMXCommonFunctions.h"
+#include "InterfaceCommonFunctions.h"
 // +++ T2_REPO - ToDo needs to be initialized
 #include "ResStatisticsSession.h"
 ResStatisticsSession    *resStatSession = NULL;

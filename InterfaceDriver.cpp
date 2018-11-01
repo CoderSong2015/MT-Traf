@@ -52,7 +52,7 @@
 #include "CommonLogger.h"
 #include "sqlcli.h"
 */
-#include "SQLMXDriver.h"
+#include "InterfaceDriver.h"
 #include <sqlext.h>
 #include "GlobalInformation.h"
 #include "SrvrCommon.h"
@@ -78,7 +78,7 @@ void setTM_enable_cleanup ()
 */
 // MFC - added two parameters to set the MFC on/off and the directory
 
-int DriverInitialize(std::string language, int nowaitOn, std::string moduleCaching, std::string compiledModuleLocation)
+int interface::DriverInitialize(std::string language, int nowaitOn, std::string moduleCaching, std::string compiledModuleLocation)
 {
 
 	const char 					*nLanguage;
@@ -219,10 +219,9 @@ int DriverInitialize(std::string language, int nowaitOn, std::string moduleCachi
 * Method:    setDefaultEncoding
 * Signature: (Ljava/lang/String;)V
 */
-void SetDefaultEncoding(string encoding)
+void interface::SetDefaultEncoding(string encoding)
 {
 	//TODO
 }
-
 
 
