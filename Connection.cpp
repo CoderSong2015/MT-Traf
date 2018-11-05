@@ -4,15 +4,22 @@ Connection::Connection(){
 }
 
 void Connection::Connect(){
-    this->dialogue =interface::Connect("hao", "db__root", "123456");
-}
-
-long Connection::GetDialogueID(){
-    return this->dialogue;
+    this->dialogue_id_ =interface::Connect("hao", "db__root", "123456");
 }
 
 int Connection::ConnectionClose(){
     interface::ConnectionClose("hao", this->GetDialogueID());
     return 0;
 }
+
+void Connection::CreateStatement(){
+    //ConnectionInit()?
+    this->stmt_ = new Statement(this);
+}
+
+Statement* Connection::GetStatement(){
+    //ConnectionInit()?
+    return this->stmt_;
+}
+
 

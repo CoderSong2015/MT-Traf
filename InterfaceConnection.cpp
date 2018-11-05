@@ -110,11 +110,15 @@ void setConnectAttr(string server, long dialogueId,
 
 void setCatalog(string server, long dialogueId, string catalog)
 {
-    const char *nCatalog = NULL;
-    nCatalog = catalog.c_str();
+    char *nCatalog = NULL;
+    nCatalog = new char[catalog.length() + 1];
+    std::strcpy (nCatalog, catalog.c_str());
 
     setConnectAttr(server, dialogueId, SQL_ATTR_CURRENT_CATALOG, 0, nCatalog);
 
+    if(NULL != nCatalog){
+        delete[] nCatalog;
+    }
     FUNCTION_RETURN_VOID((NULL));
 }
 

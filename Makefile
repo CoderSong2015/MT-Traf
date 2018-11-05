@@ -42,8 +42,10 @@ T2_OBJS  = $(OUTDIR)/CommonDiags.o \
        $(OUTDIR)/TestInterface.o \
        $(OUTDIR)/SrvrKds.o \
        $(OUTDIR)/Connection.o \
+       $(OUTDIR)/Statement.o \
        $(OUTDIR)/SrvrFunctions.o \
        $(OUTDIR)/JdbcDriverGlobal.o \
+       $(OUTDIR)/InterfaceStatement.o \
        $(OUTDIR)/InterfaceDriver.o \
        $(OUTDIR)/SrvrSmd.o \
        $(OUTDIR)/InterfaceCommonFunctions.o \

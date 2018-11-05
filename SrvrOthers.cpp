@@ -591,7 +591,6 @@ odbc_SQLSvc_ExecDirect_sme_(
                             , /* In */ const SQLValue_def *sqlString
                             , /* In */ short holdability
                             , /* In */ long queryTimeout
-                            , /* In */ long resultSet
                             , /* Out   */ long *estimatedCost
                             , /* Out   */ SQLItemDescList_def *outputDesc
                             , /* Out   */ long *rowsAffected
@@ -673,7 +672,7 @@ odbc_SQLSvc_ExecDirect_sme_(
         exception_->u.SQLInvalidHandle.sqlcode = sqlcode;
         FUNCTION_RETURN_VOID(("createSrvrStmt() Failed"));
     }
-    pSrvrStmt->resultSetObject = (jobject) resultSet;
+    //pSrvrStmt->resultSetObject = (jobject) resultSet;
     rc = pSrvrStmt->ExecDirect(cursorName, sqlString, stmtType, sqlStmtType, holdability, queryTimeout);
     switch (rc)
     {
@@ -843,7 +842,7 @@ jdbc_SQLSvc_ExecSPJRS_sme_(
     DEBUG_OUT(DEBUG_LEVEL_STMT,("  jdbc_SQLSvc_ExecSPJRS_sme_ -- rc=%ld, ResultSetIndex=%ld",
         rc, ResultSetIndex));
 
-    pSrvrStmt->resultSetObject = (jobject) resultSet;
+    //pSrvrStmt->resultSetObject = (jobject) resultSet;
 
     switch (rc)
     {

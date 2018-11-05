@@ -184,7 +184,7 @@ odbc_SQLSvc_ExecDirect_sme_(
 							, /* In	*/ const SQLValue_def *sqlString
 							, /* In	*/ short holdability
 							, /* In	*/ long queryTimeout
-							, /* In	*/ long resultSet
+							//, /* In	*/ long resultSet
 							, /* Out   */ long *estimatedCost
 							, /* Out   */ SQLItemDescList_def *outputDesc
 							, /* Out   */ long *rowsAffected
