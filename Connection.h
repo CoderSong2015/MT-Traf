@@ -19,6 +19,7 @@ public:
     bool GetAutoCommit();
     std::string GetServer();
     int GetTransactionMode();
+    void ConnectionInit();
 private:
     long dialogue_id_;
     std::string server_;

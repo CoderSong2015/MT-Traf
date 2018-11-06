@@ -100,7 +100,24 @@ namespace interface{
 
 long Connect(std::string, std::string, std::string);
 long ConnectionClose(std::string server, long dialogueId);
-
+void ConnectionInit(std::string server,
+                    long dialogueId,
+                    std::string catalog,
+                    std::string schema,
+                    std::string mploc,
+                    bool isReadOnly,
+                    bool autoCommit,
+                    int transactionIsolation,
+                    int loginTimeout,
+                    int queryTimeout,
+                    std::string modulecaching,
+                    std::string compiledmodulelocation,
+                    bool blnDoomUsrTxn,
+                    int statisticsIntervalTime,
+                    int statisticsLimitTime,
+                    std::string statisticsType,
+                    std::string programStatisticsEnabled,
+                    std::string statisticsSqlPlanEnabled);
 }
 
 

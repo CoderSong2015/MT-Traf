@@ -1,6 +1,6 @@
 #include "Connection.h"
 
-Connection::Connection(){
+Connection::Connection():auto_commit_(true){
 }
 
 void Connection::Connect(){
@@ -23,4 +23,11 @@ Statement* Connection::GetStatement(){
     return this->stmt_;
 }
 
+void Connection::ConnectionInit(){
+    //need to add mutex?
+
+
+
+
+}
 

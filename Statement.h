@@ -42,12 +42,12 @@ long Statement::GetStmtId(){
 
 inline
 std::string Statement::GetCursorName(){
-    return "STMT_TEST";
+    return "";
 }
 
 inline
 std::string Statement::GetStmtLabel(){
-    return "";
+    return "STMT_TEST";
 }
 #endif
 
