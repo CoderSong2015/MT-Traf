@@ -122,24 +122,24 @@ void setCatalog(string server, long dialogueId, string catalog)
     FUNCTION_RETURN_VOID((NULL));
 }
 
-void interface::ConnectionInit(string server,
+void interface::ConnectionInit(std::string server,
                                long dialogueId,
-                               string catalog,
-                               string schema,
-                               string mploc,
+                               std::string catalog,
+                               std::string schema,
+                               std::string mploc,
                                bool isReadOnly,
                                bool autoCommit,
                                int transactionIsolation,
                                int loginTimeout,
                                int queryTimeout,
-                               string modulecaching,
-                               string compiledmodulelocation,
+                               std::string modulecaching,
+                               std::string compiledmodulelocation,
                                bool blnDoomUsrTxn,
                                int statisticsIntervalTime,
                                int statisticsLimitTime,
-                               string statisticsType,
-                               string programStatisticsEnabled,
-                               string statisticsSqlPlanEnabled)
+                               std::string statisticsType,
+                               std::string programStatisticsEnabled,
+                               std::string statisticsSqlPlanEnabled)
 {
     //need to add mutex because use srvrGlobal
 /*
