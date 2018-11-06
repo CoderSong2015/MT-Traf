@@ -8,7 +8,7 @@ void Connection::Connect(){
 }
 
 int Connection::ConnectionClose(){
-    interface::ConnectionClose("hao", this->GetDialogueID());
+    interface::ConnectionClose("hao", this->GetDialogueId());
     return 0;
 }
 

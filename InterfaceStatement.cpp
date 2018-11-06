@@ -1,7 +1,7 @@
 #include "InterfaceStatement.h"
 
 
-void ExecuteDirect(string server,
+void interface::ExecuteDirect(string server,
               long dialogueId,
               int txid,
               bool autoCommit,

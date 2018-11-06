@@ -1,11 +1,12 @@
 #ifndef __INTERFACESTATEMENT_H_
 #define __INTERFACESTATEMENT_H_
+
 #include <platform_ndcs.h>
 #ifdef NSK_PLATFORM
         #include <sqlWin.h>
         #include <windows.h>
 #else
-        #include <sql.h>
+       // #include <sql.h>
 #endif
 #include <sqlext.h>
 #include "JdbcDriverGlobal.h"
@@ -17,8 +18,10 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
+namespace interface{
+    void ExecuteDirect(string, long, int, bool, int, string, string, string, bool, int, int, long);
+}
 
-void ExecuteDirect(string, long, int, bool, int, string, string, string, bool, int, int, long);
 
 #ifdef __cplusplus
 }
