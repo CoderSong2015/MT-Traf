@@ -36,7 +36,7 @@ public:
     std::string GetStatisticsType();
     std::string GetProgramStatisticsEnabled();
     std::string GetStatisticsSqlPlanEnabled();
-
+    int MapTxnIsolation(int);
 private:
     long dialogue_id_;
     std::string server_;

@@ -1,6 +1,11 @@
 #include "Connection.h"
 
-Connection::Connection():auto_commit_(true){
+Connection::Connection():dialogue_id_(0),
+                         auto_commit_(true),
+                         tx_id_(0),
+                         transaction_isolation_(1),
+                         catalog_("trafodion"),
+                         schema_("seabase"){
 }
 
 void Connection::Connect(){
@@ -33,7 +38,7 @@ void Connection::ConnectionInit(){
                               GetMploc(),
                               GetIsReadOnly(),
                               GetAutoCommit(),
-                              GetTransactionIsolation(),
+                              MapTxnIsolation(GetTransactionIsolation()),
                               GetLoginTimeout(),
                               GetQueryTimeout(),
                               GetModulecaching(),
@@ -48,3 +53,31 @@ void Connection::ConnectionInit(){
 
 }
 
+
+int Connection::MapTxnIsolation(int level)
+{
+    int isolationLevel;
+
+    switch (level)
+    {
+    case 0: // May be we default to SQL/MX default
+        isolationLevel = SQL_TXN_READ_COMMITTED;
+        break;
+    case 1:
+        isolationLevel = SQL_TXN_READ_COMMITTED;
+        break;
+    case 2:
+        isolationLevel = SQL_TXN_READ_UNCOMMITTED;
+        break;
+    case 3:
+        isolationLevel = SQL_TXN_REPEATABLE_READ;
+        break;
+    case 4:
+        isolationLevel = SQL_TXN_SERIALIZABLE;
+        break;
+    default:
+        isolationLevel = SQL_TXN_READ_COMMITTED;
+        break;
+    }
+    return isolationLevel;
+}

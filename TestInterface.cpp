@@ -9,7 +9,7 @@ using namespace std;
 void TestExecuteDirect();
 void TestExecuteDirect2();
 int main(){
-    //TestExecuteDirect();
+   // TestExecuteDirect();
     TestExecuteDirect2();
 
 }
@@ -21,7 +21,7 @@ void TestExecuteDirect(){
     cc->Connect();
     cout << "con" << endl;
     Statement * st = cc->CreateStatement();
-    st->ExecuteDirect("create table testtest(id int)", false, 100, 0);
+    st->ExecuteDirect("create table testtest22(id int)", false, 100, 0);
     int rc = cc->ConnectionClose();
 
     cout << rc << endl;
@@ -35,7 +35,7 @@ void TestExecuteDirect2(){
     cc->Connect();
     cout << "con" << endl;
     Statement * st = cc->CreateStatement();
-    st->ExecuteDirect("insert into test2 values(3)", false, 100, 0);
+    st->ExecuteDirect("insert into testtest22 values(3)", false, 100, 0);
     int rc = cc->ConnectionClose();
 
     cout << rc << endl;

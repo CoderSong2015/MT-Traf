@@ -270,6 +270,7 @@ void interface::ConnectionInit(std::string server,
                             CliDebugSqlError(setConnectException.exception_nr)));
         }
     }
+    /*
    if (NULL != nMploc)
     {
         //Solution 10-120315-2068 --- start
@@ -284,6 +285,7 @@ void interface::ConnectionInit(std::string server,
          specifies whether the system assumes logical names (ANSI) or physical Guardian
          names (NSK) are used to reference SQL/MP database objects in SQL statements
          */
+       /*
         odbc_SQLSvc_SetConnectionOption_sme_(NULL, NULL,
                 &setConnectException,
                 dialogueId,
@@ -314,6 +316,7 @@ void interface::ConnectionInit(std::string server,
                             CliDebugSqlError(setConnectException.exception_nr)));
         }
     }
+    */
 
     if (NULL != nCatalog)
     {
