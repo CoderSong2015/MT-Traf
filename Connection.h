@@ -13,7 +13,7 @@ public:
     int ConnectionClose();
     long GetDialogueId();
     int GetTxId();
-    void CreateStatement();
+    class Statement* CreateStatement();
     class Statement* GetStatement();
     void SetAutoCommit(bool AutoCommit);
     bool GetAutoCommit();

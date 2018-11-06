@@ -12,9 +12,10 @@ int Connection::ConnectionClose(){
     return 0;
 }
 
-void Connection::CreateStatement(){
+Statement* Connection::CreateStatement(){
     //ConnectionInit()?
     this->stmt_ = new Statement(this);
+    return this->stmt_;
 }
 
 Statement* Connection::GetStatement(){

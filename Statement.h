@@ -2,7 +2,6 @@
 #define _STATEMENT_H_
 
 #include <string>
-#include "InterfaceStatement.h"
 #include "Connection.h"
 
 class Statement{
@@ -21,6 +20,8 @@ private:
     class Connection* conn_;
     int query_timeout_;
     long stmt_id_;      // Pointer to SRVR_STMT_HDL structure in native mode
+    std::string cursor_name_;
+    std::string stmt_label_;
 };
 
 
@@ -37,6 +38,16 @@ int Statement::GetQueryTimeout(){
 inline
 long Statement::GetStmtId(){
     return this->stmt_id_;
+}
+
+inline
+std::string Statement::GetCursorName(){
+    return "STMT_TEST";
+}
+
+inline
+std::string Statement::GetStmtLabel(){
+    return "";
 }
 #endif
 
