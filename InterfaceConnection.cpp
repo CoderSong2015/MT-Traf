@@ -189,7 +189,8 @@ void interface::ConnectionInit(std::string server,
     const char *nProgramStatisticsEnabled;
     const char *nStatisticsSqlPlanEnabled;
 
-    //jclass jcls = JNI_GetObjectClass(jenv,jobj);
+
+
 
     ExceptionStruct setConnectException;
     ERROR_DESC_LIST_def sqlWarning;

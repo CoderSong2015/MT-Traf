@@ -37,6 +37,7 @@ public:
     std::string GetProgramStatisticsEnabled();
     std::string GetStatisticsSqlPlanEnabled();
     int MapTxnIsolation(int);
+    bool GetIsInit();
 private:
     long dialogue_id_;
     std::string server_;
@@ -59,9 +60,13 @@ private:
     std::string statistics_type_;
     std::string program_statistics_enabled_;
     std::string statistics_sql_plan_enabled_;
+    bool is_connection_init;
 };
 
-
+inline
+bool Connection::GetIsInit(){
+    return this->is_connection_init;
+}
 
 inline
 long Connection::GetDialogueId(){

@@ -5,7 +5,8 @@ Connection::Connection():dialogue_id_(0),
                          tx_id_(0),
                          transaction_isolation_(1),
                          catalog_("trafodion"),
-                         schema_("seabase"){
+                         schema_("seabase"),
+                         is_connection_init(false){
 }
 
 void Connection::Connect(){
@@ -31,7 +32,9 @@ Statement* Connection::GetStatement(){
 
 void Connection::ConnectionInit(){
     //need to add mutex?
-    interface::ConnectionInit(GetServer(),
+
+    if(GetIsInit()){
+        interface::ConnectionInit(GetServer(),
                               GetDialogueId(),
                               GetCatalog(),
                               GetSchema(),
@@ -50,7 +53,8 @@ void Connection::ConnectionInit(){
                               GetProgramStatisticsEnabled(),
                               GetStatisticsSqlPlanEnabled()
                               );
-
+        this->is_connection_init = false;
+    }
 }
 
 
