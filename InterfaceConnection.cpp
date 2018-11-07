@@ -18,15 +18,15 @@
 long interface::Connect(string server, string uid, string pwd)
 {
 
-    SRVR_CONNECT_HDL *jdbcConnect = NULL;
+    SRVR_CONNECT_HDL *pConnect = NULL;
 
     SQLRETURN rc;
 
     // Initialize gDescItems array
     initSqlCore(0, NULL);
 
-    MEMORY_ALLOC_OBJ(jdbcConnect, SRVR_CONNECT_HDL());
-    rc = jdbcConnect->sqlConnect("db__root", "123");
+    MEMORY_ALLOC_OBJ(pConnect, SRVR_CONNECT_HDL());
+    rc = pConnect->sqlConnect("db__root", "123");
 
     switch (rc)
     {
@@ -40,14 +40,14 @@ long interface::Connect(string server, string uid, string pwd)
         break;
     }
 
-    return (long)jdbcConnect;
+    return (long)pConnect;
 
 }
 
 long interface::ConnectionClose(string server, long dialogueId)
 {
 
-    SRVR_CONNECT_HDL *jdbcConnect;
+    SRVR_CONNECT_HDL *pConnect;
     SQLRETURN rc;
 
     ExceptionStruct setConnectException;
@@ -65,22 +65,22 @@ long interface::ConnectionClose(string server, long dialogueId)
         return setConnectException.exception_nr;
     }
 
-    jdbcConnect = (SRVR_CONNECT_HDL *)dialogueId;
-    rc = jdbcConnect->sqlClose();
+    pConnect = (SRVR_CONNECT_HDL *)dialogueId;
+    rc = pConnect->sqlClose();
     switch (rc)
     {
         case SQL_SUCCESS:
             break;
         case SQL_SUCCESS_WITH_INFO:
-            //setSQLWarning(jenv, jcls, &jdbcConnect->sqlWarning);
-            jdbcConnect->cleanupSQLMessage();
+            //setSQLWarning(jenv, jcls, &pConnect->sqlWarning);
+            pConnect->cleanupSQLMessage();
             break;
         default:
-        //throwSQLException(jenv, jdbcConnect->getSQLError());
-            jdbcConnect->cleanupSQLMessage();
+        //throwSQLException(jenv, pConnect->getSQLError());
+            pConnect->cleanupSQLMessage();
             break;
     }
-    MEMORY_DELETE_OBJ(jdbcConnect);
+    MEMORY_DELETE_OBJ(pConnect);
     return rc;
 }
 
