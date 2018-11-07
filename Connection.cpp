@@ -6,15 +6,31 @@ Connection::Connection():dialogue_id_(0),
                          transaction_isolation_(1),
                          catalog_("trafodion"),
                          schema_("seabase"),
-                         is_connection_init(false){
+                         is_connection_init_(false),
+                         is_connection_closed_(true){
+}
+
+Connection::~Connection(){
+    if(!this->is_connection_closed_){
+        ConnectionClose();
+    }
 }
 
 void Connection::Connect(){
-    dialogue_id_ =interface::Connect("hao", "db__root", "123456");
+    if (is_connection_closed_){
+        this->dialogue_id_ =interface::Connect("hao", "db__root", "123456");
+        this->is_connection_closed_ = false;
+    }
+    else{
+    }
 }
 
 int Connection::ConnectionClose(){
-    interface::ConnectionClose("hao", GetDialogueId());
+    int rc = interface::ConnectionClose("hao", GetDialogueId());
+
+    if(0 == rc){
+        this->is_connection_closed_ = true;
+    }
     return 0;
 }
 
@@ -53,7 +69,7 @@ void Connection::ConnectionInit(){
                               GetProgramStatisticsEnabled(),
                               GetStatisticsSqlPlanEnabled()
                               );
-        this->is_connection_init = false;
+        this->is_connection_init_ = false;
     }
 }
 

@@ -9,6 +9,7 @@ class Connection{
 
 public:
     Connection();
+    ~Connection();
     void Connect();
     int ConnectionClose();
     long GetDialogueId();
@@ -60,12 +61,13 @@ private:
     std::string statistics_type_;
     std::string program_statistics_enabled_;
     std::string statistics_sql_plan_enabled_;
-    bool is_connection_init;
+    bool is_connection_init_;
+    bool is_connection_closed_;
 };
 
 inline
 bool Connection::GetIsInit(){
-    return this->is_connection_init;
+    return this->is_connection_init_;
 }
 
 inline

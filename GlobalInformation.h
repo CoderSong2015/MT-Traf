@@ -32,7 +32,7 @@
 class GlobalInformation {
 	static long int			SQLMX_Version;
 	static SQLCTX_HANDLE	CurrentContext;
-	static jint				charset;			// SQL/MX supported char sets (from sqlcli.h) 
+	static jint				charset;			// SQL/MX supported char sets (from sqlcli.h)
 //	static const char		*encodingName;		// Normal C encoding name
 //	static jstring			encodingNameJava;	// Normal Java encoding name
 //	static jboolean			useDefaultEncoding;	// Allows a "default" value for the encoding
@@ -46,12 +46,12 @@ class GlobalInformation {
 public:
 	GlobalInformation();
 	~GlobalInformation();
-	
+
 	inline static void setSQLMX_Version () {
 		//SQLMX_Version = CLI_CLI_VERSION ();
 		return;
 	}
-	
+
 	inline static long int getSQLMX_Version () {
 		return (SQLMX_Version);
 	}
@@ -60,39 +60,39 @@ public:
 		CurrentContext = context;
 		return;
 	}
-	
+
 	inline static SQLCTX_HANDLE getCurrentContext () {
 		return (CurrentContext);
 	}
-	
-/*	
+
+/*
 	static void setMX_SystemsCatalog ( char *sysCat );
-	
+
 	inline static char *getMX_SystemsCatalog () {
 		return (SystemCatalog);
 	}
 
 	static void setDefaultCatalogName (char *catName);
-	
+
 	static char *getDefaultCatalogName () {
 		return (DefaultCatalog);
 	}
-	
+
 	static void setDefaultSchemaName (char *schemaName);
-	
+
 	static char *getDefaultSchemaName () {
 		return (DefaultSchema);
 	}
-	
+
 	inline static void setNoWaitFileNumber (short fileNum) {
 		nowaitFilenum = fileNum;
 		return;
 	}
-	
+
 	inline static short int getNoWaitFileNumber () {
 		return (nowaitFilenum);
 	}
-*/	
+*/
 };
 
 #endif //_GLOBALINFORMATION_H_

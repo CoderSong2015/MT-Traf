@@ -25,7 +25,7 @@
 //GlobalInformation globalInfo;
 long int		GlobalInformation::SQLMX_Version = 0;
 SQLCTX_HANDLE	GlobalInformation::CurrentContext;
-jint			GlobalInformation::charset;											// SQL/MX supported char sets (from sqlcli.h) 
+jint			GlobalInformation::charset;											// SQL/MX supported char sets (from sqlcli.h)
 //const char		GlobalInformation::*encodingName = NULL;							// Normal C encoding name
 //jstring			GlobalInformation::encodingNameJava;								// Normal Java encoding name
 //jboolean		GlobalInformation::useDefaultEncoding = JNI_FALSE;					// Allows a "default" value for the encoding
